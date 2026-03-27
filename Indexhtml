@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Affiliate Programme — Tales on Tables</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --lilac:#E8AEFF; --lilac-light:#F2CFFF; --lilac-bg:#EEC6FF; --burgundy:#7A1E2E; --burgundy-dark:#5C1520; --cream:#FDF7F0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--lilac-bg); color:var(--burgundy); overflow-x:hidden; }
+  .hero { min-height:100vh; background:var(--lilac-bg); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 24px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; border-radius:50%; background:rgba(255,255,255,0.18); }
+  .hero::after { content:''; position:absolute; bottom:-60px; left:-60px; width:240px; height:240px; border-radius:50%; background:rgba(122,30,46,0.07); }
+  .hero-tag { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:0.6; margin-bottom:24px; animation:fadeUp 0.8s ease both; }
+  .hero-join { font-weight:700; font-size:clamp(56px,14vw,110px); line-height:0.9; letter-spacing:-0.02em; color:var(--lilac); text-shadow:2px 2px 0 var(--burgundy); animation:fadeUp 0.8s 0.1s ease both; text-transform:uppercase; }
+  .hero-script { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(32px,8vw,64px); color:var(--burgundy); margin-top:8px; animation:fadeUp 0.8s 0.2s ease both; }
+  .hero-sub { font-size:15px; font-weight:300; opacity:0.75; margin-top:28px; max-width:320px; line-height:1.6; animation:fadeUp 0.8s 0.3s ease both; }
+  .hero-cta { margin-top:40px; display:inline-block; background:var(--burgundy); color:var(--lilac); font-size:13px; letter-spacing:0.15em; text-transform:uppercase; padding:16px 40px; border-radius:60px; text-decoration:none; transition:transform 0.2s; animation:fadeUp 0.8s 0.4s ease both; }
+  .hero-cta:hover { transform:scale(1.04); }
+  .share-section { background:var(--lilac-bg); padding:80px 24px 60px; text-align:center; }
+  .script-big { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(36px,9vw,72px); color:var(--burgundy); line-height:1.1; margin-bottom:32px; }
+  .brand-desc { max-width:360px; margin:0 auto; font-size:15px; font-weight:500; line-height:1.75; }
+  .brand-desc strong { display:block; margin-bottom:4px; font-weight:700; }
+  .ceramics-row { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; padding:32px 0 0; font-size:28px; opacity:0.5; letter-spacing:8px; }
+  .divider { height:2px; background:linear-gradient(90deg,transparent,var(--burgundy) 30%,var(--burgundy) 70%,transparent); opacity:0.15; margin:0 40px; }
+  .ocean-section { background:var(--burgundy); color:var(--lilac); padding:80px 32px; text-align:center; }
+  .ocean-section p { font-size:16px; line-height:1.8; max-width:400px; margin:0 auto 20px; opacity:0.9; }
+  .ocean-section p strong { font-weight:700; opacity:1; }
+  .coral-tag { display:inline-block; border:1px solid rgba(232,174,255,0.4); border-radius:40px; padding:8px 20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; margin-top:8px; opacity:0.7; }
+  .community-section { background:var(--lilac-bg); padding:80px 24px; text-align:center; }
+  .big-text { font-weight:700; font-size:clamp(22px,6vw,40px); text-transform:uppercase; line-height:1.2; letter-spacing:0.02em; max-width:440px; margin:0 auto; }
+  .ranks-section { background:var(--cream); padding:80px 24px; }
+  .section-label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; opacity:0.5; text-align:center; margin-bottom:12px; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(28px,7vw,48px); text-align:center; color:var(--burgundy); margin-bottom:48px; font-style:italic; }
+  .rank-cards { display:flex; flex-direction:column; gap:16px; max-width:480px; margin:0 auto; }
+  .rank-card { border-radius:20px; padding:28px; display:flex; align-items:flex-start; gap:20px; transition:transform 0.2s; }
+  .rank-card:hover { transform:translateY(-2px); }
+  .rank-card.starter { background:var(--lilac-bg); }
+  .rank-icon { font-size:28px; flex-shrink:0; margin-top:2px; }
+  .rank-name { font-weight:700; font-size:18px; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:6px; }
+  .rank-details { font-size:13px; line-height:1.6; opacity:0.8; }
+  .rank-pct { font-family:'Playfair Display',serif; font-style:italic; font-size:32px; margin-left:auto; flex-shrink:0; opacity:0.9; align-self:center; }
+  .how-section { background:var(--lilac-bg); padding:80px 24px; }
+  .steps { max-width:480px; margin:0 auto; }
+  .step { display:flex; gap:20px; align-items:flex-start; padding:24px 0; border-bottom:1px solid rgba(122,30,46,0.12); }
+  .step:last-child { border-bottom:none; }
+  .step-num { font-family:'Playfair Display',serif; font-style:italic; font-size:36px; opacity:0.25; line-height:1; flex-shrink:0; width:36px; }
+  .step-text strong { display:block; font-weight:700; font-size:15px; margin-bottom:4px; }
+  .step-text p { font-size:13px; line-height:1.6; opacity:0.7; }
+  .earnings-section { background:var(--burgundy); padding:80px 24px; color:var(--lilac); }
+  .earnings-section .section-title { color:var(--lilac); }
+  .earnings-section .section-label { color:var(--lilac); opacity:0.4; }
+  .earnings-table { max-width:440px; margin:0 auto; border-collapse:collapse; width:100%; }
+  .earnings-table th { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; opacity:0.5; padding:0 0 16px; text-align:left; font-weight:400; border-bottom:1px solid rgba(232,174,255,0.2); }
+  .earnings-table th:last-child { text-align:right; }
+  .earnings-table td { padding:14px 0; font-size:14px; border-bottom:1px solid rgba(232,174,255,0.1); color:var(--lilac); opacity:0.85; }
+  .earnings-table td:last-child { text-align:right; font-weight:600; opacity:1; }
+  .earnings-note { text-align:center; font-size:12px; opacity:0.45; margin-top:28px; max-width:360px; margin-left:auto; margin-right:auto; line-height:1.6; }
+  .footer-cta { background:var(--lilac-bg); padding:100px 24px; text-align:center; }
+  .footer-cta .script-big { margin-bottom:16px; }
+  .footer-cta p { font-size:14px; opacity:0.65; max-width:300px; margin:0 auto 36px; line-height:1.6; }
+  .footer-cta a { display:inline-block; background:var(--burgundy); color:var(--lilac); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; padding:16px 44px; border-radius:60px; text-decoration:none; transition:transform 0.2s; }
+  .footer-cta a:hover { transform:scale(1.04); }
+  .footer-bottom { background:var(--burgundy-dark); color:var(--lilac); text-align:center; padding:24px; font-size:11px; opacity:0.6; letter-spacing:0.1em; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body>
+<section class="hero">
+  <p class="hero-tag">Tales on Tables · Affiliate Programme</p>
+  <div class="hero-join">JOIN<br>OUR<br>AFFILIATE</div>
+  <div class="hero-script">Programme</div>
+  <p class="hero-sub">Earn while sharing ceramics you genuinely love. Handcrafted in Italy. Built for your table.</p>
+  <a href="https://af.uppromote.com/pjwqav-2p/register" target="_blank" class="hero-cta">Apply now</a>
+</section>
+<section class="share-section">
+  <div class="script-big">Share<br>what you Love.</div>
+  <p class="brand-desc"><strong>ToT</strong>creates sculptures designed for dining and home decor — ceramic that is 100% hand sculpted in a small workshop in Italy. We believe in supporting small businesses and the ancient crafts.</p>
+  <div class="ceramics-row">🪴🍋🍦🌊🧁</div>
+</section>
+<div class="divider"></div>
+<section class="ocean-section">
+  <p>Our first collection is inspired <strong>by the ocean</strong> — this is one reason why we are supporters of organisations that restore the reef barriers around the world.</p>
+  <p>Just recently we purchased our first coral planted by <strong>@coralgardeners</strong>, and are invested in creating a ToT coral colony.</p>
+  <span class="coral-tag">🪸 One table at a time</span>
+</section>
+<section class="community-section">
+  <div class="big-text">We're inviting a community of tastemakers to be part of something we're building — one table at a time.</div>
+</section>
+<div class="divider"></div>
+<section class="ranks-section">
+  <p class="section-label">Your earnings</p>
+  <h2 class="section-title">Simple & transparent</h2>
+  <div class="rank-cards">
+    <div class="rank-card starter">
+      <div class="rank-icon">🌱</div>
+      <div><div class="rank-name">Affiliate</div><div class="rank-details">Available from day one.<br>Earn 11% on every sale you generate — automatically tracked through your unique link.</div></div>
+      <div class="rank-pct">11%</div>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:12px;opacity:0.4;margin-top:28px;letter-spacing:0.05em;">% on retail price · paid monthly · min. threshold 50€</p>
+</section>
+<section class="how-section" id="how">
+  <p class="section-label">Simple by design</p>
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Apply & get your link</strong><p>Fill in the application and receive your unique affiliate link within 48 hours.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Share what you love</strong><p>Post, recommend, style. Every sale through your link earns you commission automatically.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Share & earn</strong><p>Every sale through your link earns you 11% automatically — no limits on how much you can make.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Get paid monthly</strong><p>Commissions paid out every month once you reach the minimum 50€ threshold.</p></div></div>
+  </div>
+</section>
+<section class="earnings-section">
+  <p class="section-label">Simulation</p>
+  <h2 class="section-title">What you earn</h2>
+  <table class="earnings-table">
+    <thead><tr><th>Order value</th><th>Your commission (11%)</th></tr></thead>
+    <tbody>
+      <tr><td>50€ order</td><td>5,50€</td></tr>
+      <tr><td>100€ order</td><td>11,00€</td></tr>
+      <tr><td>200€ order</td><td>22,00€</td></tr>
+      <tr><td>500€ order</td><td>55,00€</td></tr>
+    </tbody>
+  </table>
+  <p class="earnings-note">Every sale through your unique link is tracked automatically. Payments monthly.</p>
+</section>
+<section class="footer-cta" id="apply">
+  <div class="script-big">Ready to join?</div>
+  <p>One table at a time — let's build something beautiful together.</p>
+  <a href="https://af.uppromote.com/pjwqav-2p/register" target="_blank">Apply now ✦</a>
+</section>
+<div class="footer-bottom">© Tales on Tables · Affiliate Programme · talesontables.com</div>
+</body>
+</html>
